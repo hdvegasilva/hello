@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
-func main(){
-  fmt.Printf("Hello world!")
+func main() {
+
+	var message string = "Hello Go World!"
+	var greeting *string = &message
+
+	fmt.Printf(message, *greeting)
 }
