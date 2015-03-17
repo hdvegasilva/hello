@@ -1,29 +1,9 @@
 package main
 
-import "fmt"
-
-type Salutation struct {
-	name     string
-	greeting string
-}
-
-func Greet(salutation Salutation) {
-	message, alternate := CreateMessage(salutation.name, salutation.greeting)
-	fmt.Println(message)
-	fmt.Println(alternate)
-}
-
-func CreateMessage(name, greeting string) (message string, alternate string) {
-	message = greeting + " " + name
-	alternate = "HEY!" + " " + name
-	return
-}
+import "./greeting"
 
 func main() {
 
-	var s = Salutation{}
-	s.name = "Bob"
-	s.greeting = "Hello"
-
-	Greet(s)
+	var s = Salutation{"Bob", "Hello"}
+	Greet(s, CreatePrintCustom("?"), false)
 }
